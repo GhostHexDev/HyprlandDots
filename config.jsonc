@@ -1,0 +1,257 @@
+[{
+    "layer": "bottom",
+    "position": "top",
+    "mod": "dock",
+    "height": 55,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+
+	"modules-left": ["custom/left","custom/weather","custom/right","custom/left","backlight","pulseaudio","custom/right","custom/left","hyprland/workspaces","custom/right"],
+	"modules-center": ["custom/left","hyprland/window","custom/right"],
+	"modules-right": ["custom/left","clock","custom/right","custom/left","battery","custom/right","custom/left","network","custom/right"],
+
+    "network": {
+        "interface": "wlp108s0",
+        "format": "⚠  Disabled",
+        "format-wifi":  "<span font='24' rise='-5000'></span>  {essid}",
+    },
+
+     "temperature": {
+    "format": "{temperatureC}°C "
+    },
+
+     "hyprland/window": {
+        "format": "<span font='24' rise='-6000'></span>  {}",
+        "separate-outputs": true,
+        "rewrite": {
+            "matthew@ghost-hex:(.*)": "$1 <span font='24' rise='-6000'></span>",
+            "(.*)NVIM": "$1 <span font='24' rise='-6000'></span>",
+            "(.*) — Mozilla Firefox": "$1 <span font='24' rise='-6000'>󰈹</span>",
+            "(.*)Mozilla Firefox": "Firefox <span font='24' rise='-6000'>󰈹</span>",
+            "(.*) - Visual Studio Code": "$1 <span font='24' rise='-6000'>󰨞</span>",
+            "(.*)Visual Studio Code": "Code <span font='24' rise='-6000'>󰨞</span>",
+            "(.*) Dolphin": "$1 <span font='24' rise='-6000'>󰉋</span>",
+            "(.*)Spotify": "Spotify <span font='24' rise='-6000'>󰓇</span>",
+            "on-click": "~/.config/hypr/scripts/Rofi-launcher.sh"
+        }
+	},
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    "custom/weather": {
+    "exec": "python ~/.config/waybar/weather.py",
+    "restart-interval": 100,
+    "return-type": "json",
+    "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/c3e96d6cc4965fc54f88296b54449571c4107c73b9638c16aafc83575b4ddf2e"
+    },   
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", " 󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+ 
+    "pulseaudio": {
+        "format": "<span font='24'>{icon}</span>",
+        "format-muted": "󰸈",
+        "on-click": "pavucontrol -t 3",
+        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "tooltip-format": "{icon}",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "",
+                ""
+            ]
+   }
+    },
+
+    "tray": {
+      "icon-size": 24,
+        "spacing": 9
+    },
+
+
+  "clock": {
+    "interval": 60,
+    "format": "<span font='22' rise='-4500'></span> {:%a %d <span font='22' rise='-4500'></span> %I:%M}",
+    //"format": "{:%I:%M}",
+    "max-length": 25,
+    "on-click": "~/.config/eww/scripts/toggle_control_center.sh"
+ },
+   "backlight": {
+     "on-scroll-up": "brightnessctl set 10%+",
+     "on-scroll-down": "brightnessctl set 10%-",
+     "format": "<span font='20'>{icon}</span>",
+     "format-icons": [
+        "󰪞",
+        "󰪟",
+        "󰪠",
+        "󰪡",
+        "󰪢",
+        "󰪣",
+        "󰪤",
+        "󰪥"
+        ]
+    },
+
+
+// modules for padding //
+
+    "custom/left": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/right": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+},
+
+{
+        "layer": "top",
+        "exclusive": true,
+        "mod": "dock",
+        "passthrough": false,
+        "position": "bottom",
+        "fixed-center": true,
+        "ipc": true,
+        "height": 0,
+        "gtk-layer-shell": true,
+
+        "modules-center": [
+            "custom/apps","custom/term","custom/firefox","custom/vscode","custom/filemanager","custom/gimp","custom/mail","custom/spotify","custom/neovim"
+        ],
+
+        "custom/left": {
+            "format": " ",
+            "interval": "once",
+            "tooltip": false
+        },
+
+        "custom/right": {
+            "format": " ",
+            "interval": "once",
+            "tooltip": false
+        },
+
+        "hyprland/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": true,
+            "on-click": "activate",
+            "persistent-workspaces": {
+                "1": [],
+                "2": [],
+                "3": [],
+                "4": [],
+                "5": []
+            }
+        },
+
+        "custom/term": {
+            //"format": "{} <span font='38'></span>",
+            "format": "{} ", 
+            "tooltip": true,
+            "tooltip-format": "Terminal",
+            "on-click": "kitty"
+        },
+
+        "custom/gimp": {
+            //"format": "{} <span font='38'></span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Gimp",
+            "on-click": "gimp"
+        },
+
+        "custom/firefox": {
+            //"format": "{} <span font='38'></span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Firefox",
+            "on-click": "firefox"
+        },
+
+        "custom/vscode": {
+            //"format": "{} <span font='38'>󰨞</span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "VS Code",
+            "on-click": "code"
+        },
+
+        "custom/mail": {
+            //"format": "{} <span font='38'>󰶍</span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Mail",
+            "on-click": "kitty -e neomutt"
+        },
+
+        "custom/filemanager": {
+            //"format": "{} <span font='38'>󰉋</span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Filemanager",
+            "on-click": "kitty -e nnn"
+        },
+
+        "custom/neovim": {
+            //"format": "{} <span font='38'></span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "NeoVim",
+            "on-click": "kitty -e nvim"
+        },
+
+        "custom/spotify": {
+            //"format": "{} <span font='38'></span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Spotify",
+            "on-click": "spotify"
+        },
+
+        "custom/apps": {
+            //"format": "{} <span font='38'>󰵆</span>",
+            "format": "{} ",
+            "tooltip": true,
+            "tooltip-format": "Applications",
+            "on-click": "exec ~/.config/matthew/wofi/wofi.sh"
+        },
+
+    }]

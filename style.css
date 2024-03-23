@@ -1,0 +1,263 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "VictorMono Nerd Font Mono";
+    font-weight: bold;
+    font-size: 18px;
+    min-height: 10px;
+}
+
+window#waybar {
+    background-color: rgba(255,0, 0, 0.0);
+}
+
+#battery,
+#temperature,
+#clock,
+#workspaces,
+#window,
+#tray,
+#pulseaudio,
+#backlight,
+#workspaces,
+#network,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay, 
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay, 
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay, 
+#custom-weather.snowyIcyNight,
+#custom-apps,
+#custom-term,
+#custom-firefox,
+#custom-gimp,
+#custom-mail,
+#custom-neovim,
+#custom-spotify,
+#custom-filemanager,
+#custom-vscode,
+#custom-left,
+#custom-right {
+   color: @main-color;
+   background: #1a1d23;
+   margin: 4px 0px 4px 0px;
+   padding-left: 4px;
+   padding-right: 4px;
+   opacity: 1;
+   border: 0px solid #181825;
+}
+
+#custom-term {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/terminal.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-firefox {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/firefox.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+#custom-filemanager {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/archfiles.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-apps {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/launchpad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#custom-gimp {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/gimp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-mail {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/mail.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-spotify {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/spotify2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-vscode {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/vscode2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#custom-neovim {
+    font-size: 55px;
+    background: rgba(255,0, 0, 0.0);
+    background-image: url("/home/matthew/.config/icons/neovim1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+tooltip {
+    background: @tool-bg;
+    color: @tool-color;
+    border-radius: 22px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #ffffff;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.active {
+    background: #7dc4e4;
+    color: #1a1d23;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: #c6a0f6;
+    border: none;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#window {
+    color: #a6da95; 
+}
+
+#custom-weather.severe {
+    color: #f0c6c6;
+}
+
+#custom-weather.sunnyDay {
+    color: #f0c6c6;
+}
+
+#custom-weather.clearNight {
+    color: #f0c6c6;
+}
+
+#custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight {
+    color: #f0c6c6;
+}
+
+#custom-weather.rainyDay, #custom-weather.rainyNight {
+    color: #f0c6c6;
+}
+
+#custom-weather.showyIcyDay, #custom-weather.snowyIcyNight {
+    color: #f0c6c6;
+}
+
+#custom-weather.default {
+    color: #f0c6c6;
+}
+
+#temperature {
+    color: #f5a97f;
+}
+
+#temperature.critical {
+    color: #ff0000;
+}
+
+#battery {
+    color: #a6da95;
+}
+
+#pulseaudio {
+    color: #c6a0f6;
+}
+
+#backlight {
+    color: #eed49f;
+}
+
+#clock {
+   color: #cad3f5;
+}
+
+#custom-right {
+    border-radius: 0px 8px 8px 0px;
+    margin-right: 9px;
+    padding-right: 3px;
+}
+
+#custom-left {
+    border-radius: 8px 0px 0px 8px;
+    margin-left: 9px;
+    padding-left: 3px;
+}
